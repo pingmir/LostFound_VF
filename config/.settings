@@ -1,0 +1,28 @@
+{
+    "projectName": "LostFound_VF",
+    "username": "lostfound_vf@pingmir.com",
+    "id": "bf20d100-3008-11e7-9087-29fbb4764b34",
+    "namespace": "",
+    "orgType": "developer",
+    "loginUrl": "https://login.salesforce.com/",
+    "instanceUrl": "https://na50.salesforce.com",
+    "workspace": "/Users/Mir/Desktop/Desktop/Workspace_MavensMate",
+    "subscription": [
+        "ApexClass",
+        "ApexComponent",
+        "ApexPage",
+        "ApexTrigger",
+        "AssignmentRules",
+        "AuraDefinitionBundle",
+        "CustomApplication",
+        "CustomObject",
+        "CustomTab",
+        "Document",
+        "EmailTemplate",
+        "Layout",
+        "Queue",
+        "Settings",
+        "StaticResource",
+        "Workflow"
+    ]
+}
