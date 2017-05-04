@@ -1,0 +1,19 @@
+<apex:page showHeader="true" sidebar="true" controller="MainController">
+<apex:form>
+	<apex:selectRadio value="{!dSelect}">
+		<apex:selectOptions value="{!LOrFOptions}"/>
+		
+	</apex:selectRadio>
+
+	<apex:inputText value="{!rptDate}"/>
+
+	<apex:selectList id="lst_iType"  value="{!iTypes}" multiselect="true">
+		<apex:selectOptions value="{!ItemTypes}"/>
+	</apex:selectList>
+
+	<apex:inputTextarea id="txt_lComments"/>
+	
+	<apex:inputTextarea id="txt_gComments"/>
+</apex:form>
+	
+</apex:page>
