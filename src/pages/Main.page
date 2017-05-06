@@ -1,19 +1,62 @@
-<apex:page showHeader="true" sidebar="true" controller="MainController">
-<apex:form>
-	<apex:selectRadio value="{!dSelect}">
-		<apex:selectOptions value="{!LOrFOptions}"/>
-		
-	</apex:selectRadio>
-
-	<apex:inputText value="{!rptDate}"/>
-
-	<apex:selectList id="lst_iType"  value="{!iTypes}" multiselect="true">
-		<apex:selectOptions value="{!ItemTypes}"/>
-	</apex:selectList>
-
-	<apex:inputTextarea id="txt_lComments"/>
-	
-	<apex:inputTextarea id="txt_gComments"/>
-</apex:form>
-	
+<apex:page showHeader="true" sidebar="false" controller="MainController" docType="html-5.0">
+    <apex:form >
+        
+        <div style="width 90%; margin-left:10px">
+            <div style='text-align:center; font-size:20px; font-weight:bold'>Lost and Found</div>
+        </div>
+        <hr/>
+         <apex:pageBlock title="Enter Lost and Found Detail">
+            <apex:pageBlockSection columns="2" title="Select an Option" collapsible="true" >
+                <apex:outputText value="Select An Option to Start"></apex:outputText>
+               <!-- <apex:outputLabel value="Select An Option to Start"></apex:outputLabel>-->
+                <apex:selectRadio value="{!defLF}">
+                    <apex:selectOptions value="{!LOrFOptions}"/>
+                </apex:selectRadio> 
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="2" title="Add Details">
+                <apex:outputLabel value="Date Lost"></apex:outputLabel>
+                <apex:input value="{!rptDate}" type="date" />
+            
+                <apex:outputLabel value="Select Lost Item/s"></apex:outputLabel>
+                <apex:selectList value="{!selITypes}" multiselect="true">
+                    <apex:selectOptions value="{!ItemTypes}"/>
+                </apex:selectList>
+            </apex:pageBlockSection>
+             
+             
+             
+             <apex:pageBlockSection columns="2" title="Location">
+                <apex:outputLabel value="Location"></apex:outputLabel>
+                <apex:selectList value="{!selLoc}" multiselect="false">
+                    <apex:selectOptions value="{!Locs}"/>
+                </apex:selectList>
+            </apex:pageBlockSection>
+             
+             
+            <apex:pageBlockSection columns="2" title="Add Comments">
+                <apex:outputLabel value="Lost Comments"></apex:outputLabel>
+                <apex:inputTextarea id="txt_lComm" value="{!lComm}"/>
+                <apex:outputLabel value="General Comments"></apex:outputLabel>
+                <apex:inputTextarea id="txt_gComm" value="{!gComm}"/>
+            </apex:pageBlockSection>
+           
+             <apex:pageBlockSection columns="2" title="Add Client Info">
+                 <apex:outputLabel value="First Name"  />
+             	 <apex:inputText value="{!FName}" id="txt_FName" required="true"/>
+             
+                 <apex:outputLabel value="Last Name"/>
+                 <apex:inputText value="{!LName}" Id="txt_LName" required="true"/>
+                 
+                 <apex:outputLabel value="Email"/>
+                 <apex:inputText id="txt_Email" value="{!Email}" />
+                 
+                 <apex:outputLabel value="Phone"/>
+                 <apex:inputText value="{!Phone}" id="txt_Phone" required="true"/>
+             </apex:pageBlockSection>
+             
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!SaveLF}"   />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
 </apex:page>
