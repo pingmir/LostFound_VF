@@ -27,7 +27,7 @@
              
              <apex:pageBlockSection columns="2" title="Location">
                 <apex:outputLabel value="Location"></apex:outputLabel>
-                <apex:selectList value="{!selLoc}" multiselect="false">
+                <apex:selectList value="{!selLocId}" multiselect="false">
                     <apex:selectOptions value="{!Locs}"/>
                 </apex:selectList>
             </apex:pageBlockSection>

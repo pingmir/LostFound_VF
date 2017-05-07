@@ -4,12 +4,28 @@
 		"selected_items":
 		[
 			[
-				"selectOption",
-				"apex:selectOptions"
+				"c",
+				"LF_Contact_ID__c \tLookup"
+			],
+			[
+				"sell",
+				"selLocId"
+			],
+			[
+				"lo",
+				"LF_Location_ID__c \tLookup"
+			],
+			[
+				"lco",
+				"lComm"
 			],
 			[
 				"sel",
-				"apex:selectOption"
+				"selLoc"
+			],
+			[
+				"selectOption",
+				"apex:selectOptions"
 			],
 			[
 				"inputte",
@@ -71,22 +87,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "src/classes/MainController.cls",
-			"settings":
-			{
-				"buffer_size": 1111,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/pages/Main.page",
-			"settings":
-			{
-				"buffer_size": 487,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -96,9 +96,13 @@
 	"command_palette":
 	{
 		"height": 375.0,
-		"last_filter": "",
+		"last_filter": "set",
 		"selected_items":
 		[
+			[
+				"set",
+				"Set Syntax: Apex"
+			],
 			[
 				"synta",
 				"Set Syntax: Apex"
@@ -160,7 +164,7 @@
 				"Set Syntax: Objective-C"
 			]
 		],
-		"width": 435.0
+		"width": 579.0
 	},
 	"console":
 	{
@@ -249,7 +253,7 @@
 	],
 	"find":
 	{
-		"height": 29.0
+		"height": 39.0
 	},
 	"find_in_files":
 	{
@@ -263,6 +267,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"selLoc",
 			"02",
 			"small",
 			"vendor",
@@ -305,7 +310,7 @@
 			"",
 			"<br>"
 		],
-		"reverse": true,
+		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
 		"whole_word": false,
@@ -314,68 +319,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "src/classes/MainController.cls",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1111,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								606,
-								606
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/MavensMate/sublime/lang/Apex.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/pages/Main.page",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 487,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								88,
-								105
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/MavensMate/sublime/lang/Apex.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],

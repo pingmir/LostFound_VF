@@ -1,0 +1,14 @@
+<apex:page showHeader="true" sidebar="false" controller="LFHomeController">
+    <apex:form >
+    <apex:pageBlock title="Lost and Found Records">
+        <apex:pageBlockTable value="{!listOfRecords}" var="eachRecord">
+            <!--<apex:outputLink value="{!URLFOR($Action.Lead.Edit, pl.Id, null, true)}">Edit</apex:outputLink>-->
+            <apex:column value="{!eachRecord.ContactName}" headerValue="Contact Details"/>
+            <apex:column value="{!eachRecord.LComments}" headerValue="Lost Comments"/>
+            <apex:column value="{!eachRecord.GComments}" headerValue="General Comments"/>
+            <apex:column value="{!eachRecord.LocName}" headerValue="Location Lost"/>
+
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

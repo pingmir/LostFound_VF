@@ -5,8 +5,9 @@ public class MainObj {
     public String FComments {get; set;}
     public String LComments {get; set;}
     public String GComments {get; set;}
-    public integer CntctId {get; set;}
-    public integer LocId {get; set;}
-    public integer FLinkId {get; set;}
+    public String ContactName {get; set;}
+    public String LocName {get; set;}
+    public integer Found_Main_Id {get; set;}
+    public List<String> ItemType {set; get;}
     public User ownBy {get; set;}
 }
