@@ -47,8 +47,8 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <description>Location Of Item/s lost</description>
-    <enableActivities>true</enableActivities>
+    <description>Type of entry being recorded</description>
+    <enableActivities>false</enableActivities>
     <enableBulkApi>false</enableBulkApi>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
@@ -57,23 +57,21 @@
     <enableSharing>false</enableSharing>
     <enableStreamingApi>false</enableStreamingApi>
     <fields>
-        <fullName>LocName__c</fullName>
-        <caseSensitive>false</caseSensitive>
+        <fullName>EntryName__c</fullName>
         <externalId>false</externalId>
-        <label>LocName</label>
-        <length>50</length>
+        <label>EntryName</label>
+        <length>10</length>
         <required>true</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
-        <unique>true</unique>
+        <unique>false</unique>
     </fields>
-    <label>LF_Location</label>
+    <label>LF_EntryType</label>
     <nameField>
-        <displayFormat>{0}</displayFormat>
-        <label>LF_Location_ID</label>
-        <type>AutoNumber</type>
+        <label>LF_EntryType_ID</label>
+        <type>Text</type>
     </nameField>
-    <pluralLabel>LF_Locations</pluralLabel>
+    <pluralLabel>LF_EntryTypes</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
 </CustomObject>

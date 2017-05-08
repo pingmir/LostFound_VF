@@ -11,6 +11,7 @@
     </types>
     <types>
         <members>LF_Contact__c</members>
+        <members>LF_EntryType__c</members>
         <members>LF_ItemMap__c</members>
         <members>LF_ItemType__c</members>
         <members>LF_Location__c</members>

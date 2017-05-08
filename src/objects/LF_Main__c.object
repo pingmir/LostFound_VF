@@ -98,6 +98,18 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>LF_EntryType_ID__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>LF_EntryType_ID</label>
+        <referenceTo>LF_EntryType__c</referenceTo>
+        <relationshipLabel>LF_Mains_EType</relationshipLabel>
+        <relationshipName>LF_Mains_EType</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>LF_Location_ID__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <description>Lookup from Main to Location</description>

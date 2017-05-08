@@ -1,14 +1,45 @@
-<apex:page showHeader="true" sidebar="false" controller="LFHomeController">
+<apex:page showHeader="true" sidebar="false" controller="LFHomeController" standardStylesheets="true">
     <apex:form >
-    <apex:pageBlock title="Lost and Found Records">
-        <apex:pageBlockTable value="{!listOfRecords}" var="eachRecord">
-            <!--<apex:outputLink value="{!URLFOR($Action.Lead.Edit, pl.Id, null, true)}">Edit</apex:outputLink>-->
-            <apex:column value="{!eachRecord.ContactName}" headerValue="Contact Details"/>
-            <apex:column value="{!eachRecord.LComments}" headerValue="Lost Comments"/>
-            <apex:column value="{!eachRecord.GComments}" headerValue="General Comments"/>
-            <apex:column value="{!eachRecord.LocName}" headerValue="Location Lost"/>
-
-        </apex:pageBlockTable>
-    </apex:pageBlock>
+        <apex:stylesheet value="{!URLFOR($Resource.LFStatic, 'LFStatic/LF_CSS.css')}"/>
+        
+        <div style="padding:5px">
+            <apex:outputLabel title="Search" value="Search" style="font-family: Arial;font-size:20px;font-weight:bold;vertical-align:bottom"/>
+            &nbsp;<apex:inputText value="{!searchstring}" label="Input" style="width: 260px; height: 25px;" />
+            <apex:commandButton value="Search records" action="{!searchlf}"
+                                image="{!URLFOR($Resource.LFStatic,'LFStatic/search.png')}" style="position: absolute;;" />  
+        </div>
+        
+        <apex:pageBlock title="Lost and Found Records" tabStyle="Account" >
+            <apex:pageBlockTable value="{!listOfRecords}" var="eachRecord" style="font-family: verdana;font-size:13px;">
+                <apex:column headerValue="Action">
+                    <apex:commandLink action="{!EditLF}" value="Edit" >
+                        <apex:param name="editId"
+                                    assignTo="{!EditMId}"
+                                    value="{!eachRecord.MId}"/>
+                    </apex:commandLink>
+                </apex:column>
+                <apex:column value="{!eachRecord.MainId_Name}" headerValue="ID"/>
+                <apex:column value="{!eachRecord.EType}" headerValue="Item Status" />
+                <!--Traverse subquery records to display List of Lost ItemTypeName for each Entry -->
+                <apex:column headerValue="Items Lost">
+                    <apex:repeat value="{!eachRecord.ItemTypes}" var="eachitype"  >
+                        <apex:outputText value="{!eachitype.LF_ItemType_ID__r.ItemTypeName__c}"/><br/>
+                    </apex:repeat>
+                </apex:column>
+                <apex:column value="{!eachRecord.LocName}" headerValue="Location Lost"/>
+                <apex:column headerValue="Lost Date" >
+                    <apex:outputText value="{0,date,dd-MM-yyyy}">
+                        <apex:param value="{!eachRecord.LDate}" />
+                    </apex:outputText>
+                </apex:column>
+                
+                <apex:column value="{!eachRecord.ContactName}" headerValue="Contact Details"/>
+                <apex:column value="{!eachRecord.Email}" headerValue="Email"/>
+                <apex:column value="{!eachRecord.Phone}" headerValue="Phone"/>
+                <apex:column value="{!eachRecord.LComments}" headerValue="Lost Comments"/>
+                <apex:column value="{!eachRecord.GComments}" headerValue="General Comments"/>
+                
+            </apex:pageBlockTable>
+        </apex:pageBlock>
     </apex:form>
 </apex:page>

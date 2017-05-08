@@ -61,8 +61,8 @@
         <externalId>false</externalId>
         <label>LF_ItemType_ID</label>
         <referenceTo>LF_ItemType__c</referenceTo>
-        <relationshipLabel>LF_ItemMaps</relationshipLabel>
-        <relationshipName>LF_ItemMaps</relationshipName>
+        <relationshipLabel>LF_ItemMap_Types</relationshipLabel>
+        <relationshipName>LF_ItemMap_Types</relationshipName>
         <relationshipOrder>1</relationshipOrder>
         <reparentableMasterDetail>false</reparentableMasterDetail>
         <trackTrending>false</trackTrending>
@@ -74,8 +74,8 @@
         <externalId>false</externalId>
         <label>LF_Main_ID</label>
         <referenceTo>LF_Main__c</referenceTo>
-        <relationshipLabel>LF_ItemMaps</relationshipLabel>
-        <relationshipName>LF_ItemMaps</relationshipName>
+        <relationshipLabel>LF_ItemMap_Mains</relationshipLabel>
+        <relationshipName>LF_ItemMap_Mains</relationshipName>
         <relationshipOrder>0</relationshipOrder>
         <reparentableMasterDetail>false</reparentableMasterDetail>
         <trackTrending>false</trackTrending>

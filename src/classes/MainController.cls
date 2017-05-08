@@ -1,24 +1,10 @@
 public with sharing class MainController {
 
     public MainController() {
+        rptDate = System.Date.today();
     }
 
-    public String defLF {
-        set {
-            if(defLF == null)
-            	defLF = 'Lost';
-            else
-                defLF = value;
-        }
-        get;}
-   
-    public Date rptDate {get;
-          set{
-              if(rptDate == null)
-                  System.Date.today();
-              else
-                  rptDate = value;
-     }}
+    public Date rptDate {get;set;}
     
     public String lComm{set; get;}
     public String gComm {get; set;}
@@ -28,6 +14,7 @@ public with sharing class MainController {
     public string Phone{get; set;}
     public List<Id> selITypes {set; get;}
 	public Id selLocId {set;get;}
+    public Id selEntry {set;get;}
     
     public List<SelectOption> getItemTypes(){
         List<LF_ItemType__c> s = [Select Id,ItemTypeName__c from LF_ItemType__c];
@@ -39,10 +26,12 @@ public with sharing class MainController {
         return o;
     }
     public List<SelectOption> getLOrFOptions(){
+        List<LF_EntryType__c> e = [select EntryName__c from LF_EntryType__c];
+        
         List<SelectOption> s = new List<SelectOption>();
-        s.add(new SelectOption('Lost','Lost'));
-        s.add(new SelectOption('Found','Found'));
-        s.add(new SelectOption('LostFound','Lost and Found'));
+        for(LF_EntryType__c eT : e){
+            s.add(new SelectOption(eT.Id,eT.EntryName__c));
+        }
         
         return s;
     }
@@ -81,6 +70,7 @@ public with sharing class MainController {
             m.LF_Location_ID__c = this.selLocId;
             m.LF_Contact_ID__c = c.Id;
             m.LostDate__c = this.rptDate;
+            m.LF_EntryType_ID__c = this.selEntry;
             
             upsert m;
             
